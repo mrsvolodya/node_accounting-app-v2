@@ -37,7 +37,7 @@ const filterByQuery = (category, from, to, userId) => {
   const toDate = to ? new Date(to) : null;
 
   return expenses.filter((expense) => {
-    const mathesCategory = category ? expense.category === category : true;
+    const matchesCategory = category ? expense.category === category : true;
     const matchesDate =
       fromDate && toDate
         ? new Date(expense.spentAt) >= fromDate &&
@@ -45,7 +45,7 @@ const filterByQuery = (category, from, to, userId) => {
         : true;
     const matchesUser = userId ? expense.userId === +userId : true;
 
-    return mathesCategory && matchesDate && matchesUser;
+    return matchesCategory && matchesDate && matchesUser;
   });
 };
 

@@ -18,7 +18,7 @@ const getOne = (req, res) => {
 
   const expensesId = expensesService.getById(id);
 
-  if (!expensesId || !id) {
+  if (!expensesId) {
     return res.status(404).json({ message: 'Expenses not found' });
   }
 
@@ -67,7 +67,7 @@ const remove = (req, res) => {
   }
   expensesService.remove(index);
 
-  return res.status(204).json({ message: 'No Content' });
+  return res.status(204);
 };
 
 module.exports = {

@@ -53,7 +53,7 @@ const remove = (req, res) => {
 
   usersService.removeUser(index);
 
-  return res.status(204).json('No Content');
+  return res.status(204);
 };
 
 module.exports = {

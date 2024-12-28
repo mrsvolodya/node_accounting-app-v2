@@ -67,7 +67,7 @@ const remove = (req, res) => {
   }
   expensesService.remove(index);
 
-  return res.status(204);
+  return res.status(204).end();
 };
 
 module.exports = {
